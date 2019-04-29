@@ -188,8 +188,8 @@ namespace LPPraktickaUloha
         {
             Console.WriteLine("param N := " + graph.NumberOfVertices+";");
             Console.WriteLine("set Vertices := (0..N-1);");
-            Console.WriteLine("var M >= 0;");
-            Console.WriteLine("var x{i in Vertices} >= -1;");
+            Console.WriteLine("var M >= -1;");
+            Console.WriteLine("var x{i in Vertices} >= 0;");
             Console.WriteLine("minimize obj: M;");
             Console.WriteLine("condition_vertex{i in Vertices}: x[i] <= M;");
             
@@ -280,13 +280,13 @@ namespace LPPraktickaUloha
                                    "for the second assigment.");
             }
 
-            //For first assigment
+            //For the first assigment
             if (args[0] == "first")
             {
                 Graph graph = ProcessInput.InputToGraphFirstAssigment();
                 CreateLP.CreatePrintLPFirstAssigment(graph);
             }
-            //For second assigment.
+            //For the second assigment.
             else if(args[0] == "second")
             {
                 Graph graph = ProcessInput.InputToGraphSecondAssigment();
